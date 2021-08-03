@@ -6,7 +6,7 @@ There are 3 models of the OUCAM so far, P1 P2 and an outdoor model that's no lon
 |---------|-------------------------------|---------------------------|
 | P1      | <img src="oucam_p1_thumb1.png" width="300px">      | <img src="oucam_p1_inside1.jpg" width="300px"> |
 | P2      | <img src="oucam_p2_thumb1.png" width="300px">      | <img src="oucam_p2_inside1.jpg" width="300px"> |
-| Outdoor | <img src="oucam_outdoor_thumb1.png" width="300px"> | None                      |
+| Outdoor | <img src="oucam_outdoor_thumb1.png" width="300px"> | None                                           |
 
 These cameras seem similar the "v380" or "A9" cameras available everywhere for US$20.
 
@@ -17,6 +17,8 @@ These cameras seem similar the "v380" or "A9" cameras available everywhere for U
 ### Platform
 
 Detailed at [anyka's website](http://www.anyka.com/en/productInfo.aspx?id=109), and in the [specs](http://monitor.espec.ws/files/700cafec77419c2d7705f376c974b8d0ff72_986.pdf).
+
+See also https://github.com/HoffmannP/Camera and https://gist.github.com/maxious/c8915a436b532ab09e61bf937295a5d2.
 
 #### Features
 
@@ -227,6 +229,13 @@ The meat of the motion detection seems to happen in a binary blob, `/usr/lib/lib
 
 The tunable params are the "ratio" of changed pixels, and the number of sections the frame is divided into. Set in `/etc/jffs2/anyka_cfg.ini` (`motion_size_x` and `motion_size_y`).
 
+## Alarm app push alerts
+
+```
+[root@anyka ~]$ strings /usr/bin/anyka_ipc |grep curl
+/usr/bin/curl -s "http://oucam0.jkgeek.com:8088/OuCamRaise/server.php?cmd=raisealarm&devid=%s&eventtype=%d&eventtime=%lu"
+```
+
 ### Change root password
 
 mkpasswd -S yu6zTMnb --method=md5
@@ -403,8 +412,45 @@ mtd0ro     mtd1ro     mtd2ro     mtd3ro     mtdblock1  mtdblock3
 
 ### Busybox applets
 
+```
+BusyBox v1.20.2 (2015-04-17 19:54:22 CST) multi-call binary.
+
+Currently defined functions:
+        [, [[, acpid, adduser, adjtimex, arp, arping, ash, awk, base64, basename, beep, blockdev,
+        bootchartd, brctl, cal, cat, catv, chat, chmod, chown, chroot, chrt, chvt, cksum, clear,
+        cmp, cp, crontab, cryptpw, cttyhack, cut, date, dc, dd, depmod, devmem, df, dhcprelay,
+        diff, dirname, dmesg, dnsdomainname, dos2unix, du, dumpkmap, dumpleases, echo, egrep,
+        eject, env, expand, expr, fakeidentd, false, fbset, fbsplash, fgconsole, fgrep, find,
+        fold, free, fsync, ftpd, ftpget, ftpput, fuser, getopt, getty, grep, groups, halt, hd,
+        head, hexdump, hostid, hostname, hwclock, id, ifconfig, ifdown, ifenslave, ifplugd, ifup,
+        inetd, init, inotifyd, insmod, install, ionice, iostat, ip, ipaddr, ipcalc, ipcrm, ipcs,
+        iplink, iproute, iprule, iptunnel, kbd_mode, kill, killall, killall5, klogd, less,
+        linux32, linux64, linuxrc, ln, loadfont, loadkmap, logger, login, logname, logread,
+        losetup, ls, lsmod, lsof, lspci, lsusb, makedevs, md5sum, mdev, mesg, mkdir, mkdosfs,
+        mkfifo, mkfs.vfat, mknod, mkpasswd, modinfo, modprobe, more, mount, mountpoint, mv,
+        nameif, nanddump, nandwrite, nbd-client, nc, netstat, nice, nslookup, ntpd, od, passwd,
+        pgrep, pidof, ping, pivot_root, pkill, pmap, poweroff, powertop, printenv, printf, ps,
+        pscan, pstree, pwd, pwdx, rdate, rdev, readahead, readlink, readprofile, realpath,
+        reboot, renice, reset, resize, rm, rmdir, rmmod, route, rtcwake, rx, script,
+        scriptreplay, sed, setarch, setconsole, setfont, setkeycodes, setlogcons, setserial,
+        setsid, sh, sha1sum, sha256sum, sha512sum, showkey, slattach, sleep, smemcap, sort,
+        split, stat, strings, stty, sum, switch_root, sync, sysctl, syslogd, tail, tar, tcpsvd,
+        tee, telnet, telnetd, test, tftp, tftpd, time, timeout, top, touch, traceroute, true,
+        tty, tunctl, ubiattach, ubidetach, ubimkvol, ubirmvol, ubirsvol, ubiupdatevol, udhcpc,
+        udhcpd, udpsvd, umount, uname, uncompress, unix2dos, uptime, usleep, uudecode, uuencode,
+        vconfig, vi, volname, watch, watchdog, wc, which, whoami, whois, xargs, yes
+```
 
 #### Busybox applets not mapped
+
+```
+[root@anyka ~]$ for applet in $(busybox --list); do if [ ! $(which $applet) ]; then echo $applet; 
+fi; done
+adduser
+cryptpw
+linuxrc
+mkpasswd
+```
 
 ## More info about binaries
 help string for anyka_ipc or daemon? No
@@ -2062,3 +2108,6 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 314072        0x4CAD8         Unix path: /var/run/hostapd
 315392        0x4D000         JFFS2 filesystem, little endian
 ```
+## Manufacturer support
+
+There are several email addresses written on the paper instructions included with the cameras: oucam888@gmail.com, fecomisupport@163.com
