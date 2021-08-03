@@ -461,7 +461,7 @@ irledlevel in strings seems to indicate variability in brightness of IR leds
 Setting `debug = 1` in `/etc/jffs2/anyka_cfg.ini` results in a lot of useful info in `/var/log/messages`
 
 ### Settings management
-Standard P2P API calls:
+Standard P2P API calls, see https://github.com/6Six/CameraMonitor_iOS/blob/master/IOTCameraLib/iOS/Debug-iphoneos/IOTCamera.framework/Headers/AVIOCTRLDEFs.h
 ```
 [root@anyka /mnt]$ strings /usr/bin/anyka_ipc |grep IOTYPE_USER_IPCAM_
 IOTYPE_USER_IPCAM_START, ch:%d, avIndex:%d
