@@ -1,0 +1,638 @@
+[root@anyka ~]$ dmesg
+Booting Linux on physical CPU 0
+Linux version 3.4.35 (root@ubuntu) (gcc version 4.4.1 (Sourcery G++ Lite 2009q3-67) ) #25 Tue Nov 19 14:00:09 HKT 2019
+CPU: ARM926EJ-S [41069265] revision 5 (ARMv5TEJ), cr=00053177
+CPU: VIVT data cache, VIVT instruction cache
+Machine: Cloud39E_AK3918E+H42_V1.0.2
+Memory policy: ECC disabled, Data cache writeback
+ANYKA CPU AK3916 (ID 0x20150200)
+On node 0 totalpages: 10240
+free_area_init_node: node 0, pgdat c03b64d8, node_mem_map c03d5000
+  Normal zone: 80 pages used for memmap
+  Normal zone: 0 pages reserved
+  Normal zone: 10160 pages, LIFO batch:1
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+pcpu-alloc: [0] 0 
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 10160
+Kernel command line: root=/dev/mtdblock1 ro rootfstype=squashfs init=/sbin/init mem=64M console=ttySAK0,115200
+PID hash table entries: 256 (order: -2, 1024 bytes)
+Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Memory: 40MB = 40MB total
+Memory: 36616k/36616k available, 4344k reserved, 0K highmem
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    vmalloc : 0xc3000000 - 0xff000000   ( 960 MB)
+    lowmem  : 0xc0000000 - 0xc2800000   (  40 MB)
+    modules : 0xbf000000 - 0xc0000000   (  16 MB)
+      .text : 0xc0008000 - 0xc0379000   (3524 kB)
+      .init : 0xc0379000 - 0xc0393000   ( 104 kB)
+      .data : 0xc0394000 - 0xc03b7180   ( 141 kB)
+       .bss : 0xc03b71a4 - 0xc03d4d1c   ( 119 kB)
+SLUB: Genslabs=13, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS:95
+sched_clock: 32 bits at 100 Hz, resolution 10000000ns, wraps every 4294967286ms
+AK39 console driver initial
+console [ttySAK0] enabled
+Calibrating delay loop... 199.06 BogoMIPS (lpj=995328)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+CPU: Testing write buffer coherency: ok
+Setting up static identity map for 0x81ab7810 - 0x81ab7868
+devtmpfs: initialized
+NET: Registered protocol family 16
+On-chip L2 memory initialized
+AK39 clocks: CPU 400MHz, MEM 200MHz, ASIC 100MHz
+Anyka platform share gpio locks initialize.
+bio: create slab <bio-0> at 0
+SCSI subsystem initialized
+*********akfha_char init
+akfha Char Device Initialize Successed!
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+i2c-ak39 i2c-ak39: Unable to achieve desired frequency 40KHz. Lowest achievable 48KHz
+i2c-ak39 i2c-ak39: i2c-0: AK39 I2C adapter
+Linux video capture interface: v2.00
+cfg80211: Calling CRDA to update world regulatory domain
+NET: Registered protocol family 2
+IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+exFAT: Version 1.2.9
+jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+msgmni has been set to 71
+io scheduler noop registered
+io scheduler cfq registered (default)
+AK39xx uart driver init, (c) 2013 ANYKA
+ak39-uart.0: ttySAK0 at MMIO 0x20130000 (irq = 10) is a AK39
+ion: failed to create debug files.
+brd: module loaded
+loop: module loaded
+AK Motor Driver (c) 2013 ANYKA
+akpcm_init
+ak39_codec_probe enter.
+akpcm_probe
+akpcm initialize OK!
+akpcm_probe ok.
+akisp_init
+Start to init Anyka SPI Flash...
+AK SPI Driver, (c) 2012 ANYKA
+akpi regs: SPICON:00000152, SPISTA:00000015, SPIINT:00000000.
+ak-spi ak-spi: master is unqueued, this is deprecated
+ak_spi setup the master.
+pre-scaler=2 (wanted 20Mhz, got 16Mhz)
+ak spiflash probe enter.
+pre-scaler=2 (wanted 20Mhz, got 16Mhz)
+ak_spi_setupxfer,con:00000252.
+akspi flash ID: 0x001c7017
+PN26f64B, info->sector_size = 65536, info->n_sectors = 128
+ak-spiflash spi0.0: PN26f64B (8192 Kbytes)
+FHA:fhalib V1.0.25
+FHA:FHA_S SPIFlash_Init: BinPageStartblock:35,
+FHA:FHA_S SPIFlash_Init: BinPageStart:560,
+FHA:FHA_S G_P_S:558 
+nr_parts=0x3
+mtd_part[0]:
+name = A
+size = 0x200000
+offset = 0x260000
+mask_flags = 0x0
+
+mtd_part[1]:
+name = B
+size = 0x300000
+offset = 0x460000
+mask_flags = 0x0
+
+mtd_part[2]:
+name = C
+size = 0x50000
+offset = 0x760000
+mask_flags = 0x0
+
+Creating 3 MTD partitions on "spi0.0":
+0x000000260000-0x000000460000 : "A"
+0x000000460000-0x000000760000 : "B"
+0x000000760000-0x0000007b0000 : "C"
+Init AK SPI Flash finish.
+akspi master initialize success, use for DMA mode.
+input: akgpio-keys as /devices/platform/akgpio-keys/input/input0
+battery:cap=49; vol=3746; status=discharge; full=0; poweroff_cap=0; low_cap=5.
+AK Battery initialized
+AK MCI Driver (c) 2010 ANYKA
+akmci ak_mci: Mci Interface driver.mmc0. using l2dma, sw IRQ. detect mode:plugin alway.
+akmci ak_sdio: Mci Interface driver.mmc1. using l2dma, hw IRQ. detect mode:plugin alway.
+Registered led device: wps_pled
+Registered led device: wps_led
+TCP: cubic registered
+NET: Registered protocol family 17
+lib80211: common routines for IEEE802.11 drivers
+lib80211_crypt: registered algorithm 'NULL'
+/xxxxx/tutk/kernel/drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+VFS: Mounted root (squashfs filesystem) readonly on device 31:1.
+devtmpfs: mounted
+Freeing init memory: 104K
+mmc0: host does not support reading read-only switch. assuming write-enable.
+mmc0: new SDHC card at address aaaa
+mmcblk0: mmc0:aaaa SD32G 29.7 GiB 
+ mmcblk0: p1
+mmc1: new SDIO card at address 0001
+ar0130_module_init
+gc1024_module_init
+gc1034_module_init
+tvp5150_module_init
+h42_module_init
+h61_module_init
+h62_module_init
+ov9712_module_init
+ov9732_module_init
+sc1035_module_init
+sc1045_module_init
+sc1135_module_init
+sc1145_module_init
+sc1235_module_init
+aksensor_module_init
+soc-camera-pdrv soc-camera-pdrv: Probing soc-camera-pdrv
+ak_camera ak_camera.39: AK Camera driver attached to camera 0
+ID ar0130_g_ctl val:0x0
+gc1024_set_poweron
+ID gc1024_g_ctl val:0x0
+gc1034_set_poweron
+ID gc1034_g_ctl val:0x0
+tvp5150_set_poweron
+reg0x80:0xff
+ID tvp5150_g_ctl val:0x0
+h42_set_poweron
+ID h42_g_ctl val:0x0
+h61_set_poweron
+ID h61_g_ctl val:0x0
+h62_set_poweron
+ID h62_g_ctl val:0xa062
+aksensor 0-0001: Probing h62 Sensor ID: 0xa062
+ak_camera ak_camera.39: AK Camera driver detached from camera 0
+ak_camera ak_camera.39: AK Camera driver loaded
+i2c i2c-0: new_device: Instantiated device MCU at 0x49
+udc driver initialize, (c) 2013 Anyka
+Fat file system start scan disk, total 973586 cluster.
+..................................................Scan disk finish, spend time:1980ms.
+RTL871X: module init start
+RTL871X: rtl8189es v4.3.0.4_11916.20140724_COB
+RTL871X: build time: Dec 24 2019 14:33:36
+RTL871X: CHIP TYPE: RTL8188E
+RTL871X: register rtw_netdev_ops to netdev_ops
+RTL871X: Chip Version Info: CHIP_8188E_Normal_Chip_TSMC_D_CUT_1T1R_RomVer(0)
+RTL871X: RF_Type is 3!!
+RTL871X: EEPROM type is E-FUSE
+RTL871X: =>_CardEnable
+RTL871X: SetHwReg8188ES: bMacPwrCtrlOn=1
+RTL871X: <=_CardEnable
+RTL871X: _ReadPROMContent: 9346CR=0x20, Boot from EFUSE, Autoload OK
+RTL871X: =>_InitPowerOn_8188ES
+RTL871X: =>_CardEnable
+RTL871X: =>_CardEnable bMacPwrCtrlOn == _TRUE do nothing !!
+RTL871X: <=_CardEnable
+RTL871X: <=_InitPowerOn_8188ES
+bFWReady == _FALSE call reset 8051...
+RTL871X: =====> _8051Reset88E(): 8051 reset success .
+RTL871X: efuse_read_phymap_from_txpktbuf bcnhead:0
+RTL871X: efuse_read_phymap_from_txpktbuf len:162, lenbak:162, aaa:162, aaabak:162
+RTL871X: efuse_read_phymap_from_txpktbuf read count:160
+RTL871X: 0x32 ,RTL871X: 0x32 ,RTL871X: 0x32 ,RTL871X: 0x31 ,RTL871X: 0x30 ,RTL871X: 0x30 ,RTL871X: 0x34 ,RTL871X: 0x34 ,RTL871X: 0x34 ,RTL871X: 0x33 ,RTL871X: 0x32 ,RTL871X: 0x01 ,RTL871X: 
+RTL871X: EEPROM ID=0x8129
+RTL871X: =>_InitPowerOn_8188ES
+RTL871X: =>_CardEnable
+RTL871X: =>_CardEnable bMacPwrCtrlOn == _TRUE do nothing !!
+RTL871X: <=_CardEnable
+RTL871X: <=_InitPowerOn_8188ES
+bFWReady == _FALSE call reset 8051...
+RTL871X: =====> _8051Reset88E(): 8051 reset success .
+RTL871X: efuse_read_phymap_from_txpktbuf bcnhead:0
+RTL871X: efuse_read_phymap_from_txpktbuf len:162, lenbak:162, aaa:162, aaabak:162
+RTL871X: efuse_read_phymap_from_txpktbuf read count:160
+RTL871X: phy efuse with valid MAC addr
+RTL871X: using phy efuse mac
+RTL871X: =>_InitPowerOn_8188ES
+RTL871X: =>_CardEnable
+RTL871X: =>_CardEnable bMacPwrCtrlOn == _TRUE do nothing !!
+RTL871X: <=_CardEnable
+RTL871X: <=_InitPowerOn_8188ES
+bFWReady == _FALSE call reset 8051...
+RTL871X: =====> _8051Reset88E(): 8051 reset success .
+RTL871X: efuse_read_phymap_from_txpktbuf bcnhead:0
+RTL871X: efuse_read_phymap_from_txpktbuf len:162, lenbak:162, aaa:162, aaabak:162
+RTL871X: efuse_read_phymap_from_txpktbuf read count:160
+RTL871X: Hal_GetPhyEfuseMACAddr_8188ES: Permanent Address = 44-01-bb-e8-be-c8
+RTL871X: Hal_ReadPowerSavingMode88E...bHWPwrPindetect(0)-bHWPowerdown(0) ,bSupportRemoteWakeup(0)
+RTL871X: ### PS params=>  power_mgnt(0),usbss_enable(0) ###
+RTL871X: ======= Path 0, Channel 1 =======
+RTL871X: Index24G_CCK_Base[0][1] = 0x32
+RTL871X: Index24G_BW40_Base[0][1] = 0x34
+RTL871X: ======= Path 0, Channel 2 =======
+RTL871X: Index24G_CCK_Base[0][2] = 0x32
+RTL871X: Index24G_BW40_Base[0][2] = 0x34
+RTL871X: ======= Path 0, Channel 3 =======
+RTL871X: Index24G_CCK_Base[0][3] = 0x32
+RTL871X: Index24G_BW40_Base[0][3] = 0x34
+RTL871X: ======= Path 0, Channel 4 =======
+RTL871X: Index24G_CCK_Base[0][4] = 0x32
+RTL871X: Index24G_BW40_Base[0][4] = 0x34
+RTL871X: ======= Path 0, Channel 5 =======
+RTL871X: Index24G_CCK_Base[0][5] = 0x32
+RTL871X: Index24G_BW40_Base[0][5] = 0x34
+RTL871X: ======= Path 0, Channel 6 =======
+RTL871X: Index24G_CCK_Base[0][6] = 0x32
+RTL871X: Index24G_BW40_Base[0][6] = 0x34
+RTL871X: ======= Path 0, Channel 7 =======
+RTL871X: Index24G_CCK_Base[0][7] = 0x32
+RTL871X: Index24G_BW40_Base[0][7] = 0x34
+RTL871X: ======= Path 0, Channel 8 =======
+RTL871X: Index24G_CCK_Base[0][8] = 0x32
+RTL871X: Index24G_BW40_Base[0][8] = 0x34
+RTL871X: ======= Path 0, Channel 9 =======
+RTL871X: Index24G_CCK_Base[0][9] = 0x31
+RTL871X: Index24G_BW40_Base[0][9] = 0x33
+RTL871X: ======= Path 0, Channel 10 =======
+RTL871X: Index24G_CCK_Base[0][10] = 0x31
+RTL871X: Index24G_BW40_Base[0][10] = 0x33
+RTL871X: ======= Path 0, Channel 11 =======
+RTL871X: Index24G_CCK_Base[0][11] = 0x31
+RTL871X: Index24G_BW40_Base[0][11] = 0x33
+RTL871X: ======= Path 0, Channel 12 =======
+RTL871X: Index24G_CCK_Base[0][12] = 0x30
+RTL871X: Index24G_BW40_Base[0][12] = 0x32
+RTL871X: ======= Path 0, Channel 13 =======
+RTL871X: Index24G_CCK_Base[0][13] = 0x30
+RTL871X: Index24G_BW40_Base[0][13] = 0x32
+RTL871X: ======= Path 0, Channel 14 =======
+RTL871X: Index24G_CCK_Base[0][14] = 0x30
+RTL871X: Index24G_BW40_Base[0][14] = 0x32
+RTL871X: ======= TxCount 0 =======
+RTL871X: CCK_24G_Diff[0][0]= 0
+RTL871X: OFDM_24G_Diff[0][0]= 1
+RTL871X: BW20_24G_Diff[0][0]= 0
+RTL871X: BW40_24G_Diff[0][0]= 0
+RTL871X: EEPROMRegulatory = 0x0
+RTL871X: mlmepriv.ChannelPlan = 0x08
+RTL871X: CrystalCap: 0x c
+RTL871X: EEPROM Customer ID: 0x 0
+RTL871X: Board Type: 0x 0
+RTL871X: ThermalMeter = 0x1c
+RTL871X: Hal_DetectWoWMode
+RTL871X: AutoloadFail =0,
+RTL871X: Adapter->eeprompriv.EEPROMRFGainVal=ff
+RTL871X: EEPRORFGainOffset = 0x00
+RTL871X: <==== ReadAdapterInfo8188ES in 200 ms
+RTL871X: init_channel_set ChannelPlan ID 8 Chan num:14  
+RTL871X: rtw_macaddr_cfg MAC Address  = 44:01:bb:e8:be:c8
+RTL871X: bDriverStopped:1, bSurpriseRemoved:0, bup:0, hw_init_completed:0
+RTL871X: register rtw_netdev_ops to netdev_ops
+RTL871X: register rtw_netdev_if2_ops to netdev_ops
+RTL871X: Chip Version Info: CHIP_8188E_Normal_Chip_TSMC_D_CUT_1T1R_RomVer(0)
+RTL871X: RF_Type is 3!!
+RTL871X: init_channel_set ChannelPlan ID 8 Chan num:14  
+RTL871X: rtw_ndev_init(wlan0)
+akudc start() 'g_mass_storage'
+g_mass_storage gadget: Mass Storage Function, version: 2009/09/11
+g_mass_storage gadget: Number of LUNs=1
+ lun0: LUN: removable file: /dev/mmcblk0p1
+g_mass_storage gadget: Mass Storage Gadget, version: 2009/09/11
+g_mass_storage gadget: userspace failed to provide iSerialNumber
+g_mass_storage gadget: g_mass_storage ready
+binding gadget driver 'g_mass_storage'
+RTL871X: _rtw_drv_register_netdev, MAC Address (if1) = 44:01:bb:e8:be:c8
+RTL871X: rtw_ndev_init(wlan1)
+RTL871X: _rtw_drv_register_netdev, MAC Address (if2) = 46:01:bb:e8:be:c8
+RTL871X: module init ret=0
+dma alloc vir:0xffdfc000, phy:0x83b7c000
+dma alloc vir:0xffdf0000, phy:0x82f50000
+dma alloc vir:0xffdf8000, phy:0x82f10000
+isp_module_init: ISPDrvLib V0.2.15
+isp2 module init: isp_struct size=42184, dma_area=0xffdfc000, dma_bytes=11808, io_base=0xf0010000
+ak_camera ak_camera.39: AK Camera driver attached to camera 0
+MCLK h62_g_ctl val:27
+h62_set_poweron
+aksensor_g_ctrl id:9961482 failed
+isp_>blc_mode=0RESOLUTION h62_g_ctl val:5243600
+FPS h62_g_ctl val:25
+soc-camera-pdrv soc-camera-pdrv: S_CROP denied: getting current crop failed
+aksensor_g_ctrl id:9961482 failed
+aksensor_s_stream resume.
+h62_set_fps :fps = 13
+FPS h62_g_ctl val:13
+isp_>blc_mode=0h62_set_fps :fps = 10
+FPS h62_g_ctl val:10
+RTL871X: +871x_drv - if2_open, bup=0
+RTL871X: +871x_drv - drv_open, bup=0
+RTL871X: +rtl8188es_hal_init
+RTL871X: FW does not exit before power on!!
+RTL871X: =>_InitPowerOn_8188ES
+RTL871X: =>_CardEnable
+RTL871X: =>_CardEnable bMacPwrCtrlOn == _TRUE do nothing !!
+RTL871X: <=_CardEnable
+RTL871X: <=_InitPowerOn_8188ES
+RTL871X: PowerOnCheck: val_mix:0x0000063f, res:0x0000063f
+RTL871X: PowerOnCheck: 0x100 the result of cmd52 and cmd53 is the same.
+RTL871X: PowerOnCheck: 0x1B8 test Pass.
+RTL871X: Power on ok!
+RTL871X: _init_available_page_threshold(): Enable Tx FIFO Page Threshold H:0x5050,N:0x5050,L:0x5454
+RTL871X: rtl8188e_FirmwareDownload fw:NIC, size: 15096
+RTL871X: rtl8188e_FirmwareDownload: fw_ver=12 fw_subver=0000 sig=0x88e1, Month=13, Date=39, Hour=d8, Minute=3a
+
+ --- playback_open,0 ---
+
+ playback rt allocate: c1700900 
+
+ === playback_open ===
+akpcm set play device(s) = 1
+
+        ****set HP gain 2
+dac: perfect asic pll clk is:400384000, actual sample rate is 15984.
+
+ playback buffer alloc: c15c0000, c000
+
+ playback boundary: c0000000
+akpcm set play device(s) = 1
+~dac: perfect asic pll clk is:400384000, actual sample rate is 15984.
+seths sr 15984,pll 400
+
+ ~~rate:16000
+set_channel_source addr : 0, src : 4
+ak39_set_hp_power 1,soft_de_pipa=1
+set_channel_source: src:4, s_dac:1, s_linein:0, s_mic:0.
+~~playback prd_bytes:4096
+
+ capture_ioctl reset buf
+
+ === capture_pause ===
+akpcm set capture device(s) = 1
+
+ [chg_channel_source,0, 2]!
+set_channel_source addr : 2, src : 2
+set_channel_source: src:2, s_dac:1, s_linein:0, s_mic:1.
+
+        ****set MIC gain 5
+adc: perfect asic pll clk is:399360000, actual sample rate is 8012.
+---ADC asic_pll = 400000000, SR_save = 8012. des_sr = 8000, div = 194
+
+ capture buffer alloc: c1730000, 8000
+
+ capture boundary: -2147483648
+
+ capture rate: 1f40
+adc: perfect asic pll clk is:399360000, actual sample rate is 8012.
+---ADC asic_pll = 400000000, SR_save = 8012. des_sr = 8000, div = 194
+
+ === capture_pause ===
+AEC_Start: aec 0, nr 1, agc 1
+--Echo Version V1.1.09_svn215--
+## AEC open
+
+AEC_Thread+
+
+AEC_Prio_Supervisor_Thread+
+AEC starts capture, timer: 1 jiffies @ 100 Hz
+~~capture prd_bytes:2048
+RTL871X: polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:0x00030005
+RTL871X: =====> _8051Reset88E(): 8051 reset success .
+RTL871X: _FWFreeToGo: Polling FW ready OK! (11, 10ms), REG_MCUFWDL:0x000300c6
+RTL871X: FWDL success. write_fw:1, 1250ms
+==> rtl8188e_iol_efuse_patch 
+RTL871X: HalDetectPwrDownMode(): PDN=0
+RTL871X: Set RF Chip ID to RF_6052 and RF type to 1T1R.
+RTL871X: pDM_Odm TxPowerTrackControl = 1
+RTL871X: DISABLE_BB_RF=0
+RTL871X: IS_HARDWARE_TYPE_8188ES=1
+RTL871X: -rtl8188es_hal_init
+RTL871X: rtl8188es_hal_init in 1950ms
+RTL871X: hw_var_set_opmode()-2572 mode = 2
+RTL871X: +rtw_bb_rf_gain_offset EEPROMRFGainOffset(0xc1): 0x00+
+RTL871X: Using the default RF gain.
+RTL871X: MAC Address = 44:01:bb:e8:be:c8
+RTL871X: +871x_drv - if2_open, bup=0
+RTL871X: -871x_drv - if2_open, bup=1
+RTL871X: -871x_drv - drv_open, bup=1
+RTL871X: -871x_drv - if2_open, bup=1
+RTL871X: set_mode = IW_MODE_MASTER
+RTL871X: rtw_hostapd_sta_flush
+RTL871X: rtw_sta_flush(wlan1)
+RTL871X: rtw_set_encryption
+RTL871X: clear default encryption keys, keyid=0
+RTL871X: rtw_set_encryption
+RTL871X: clear default encryption keys, keyid=1
+RTL871X: rtw_set_encryption
+RTL871X: clear default encryption keys, keyid=2
+RTL871X: rtw_set_encryption
+RTL871X: clear default encryption keys, keyid=3
+RTL871X: start rtl8188es_xmit_thread
+RTL871X: start rtl8188es_xmit_thread
+RTL871X: hw_var_set_opmode()-2458 mode = 3
+RTL871X: rtw_port_switch_chk wlan1 is AP/GO
+RTL871X: port switch - port0(wlan1), port1(wlan0)
+
+ playback stopped. bffff200, c000
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): Filesystem has been set read-only
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+FAT-fs (mmcblk0p1): error, fat_bmap_cluster: request beyond EOF (i_pos 265225)
+RTL871X: rtw_set_beacon, len=158
+RTL871X: rtw_check_beacon_data, len=144
+RTL871X: [HT] Support STBC = 0x01
+RTL871X: update_hw_ht_param
+RTL871X: update_hw_ht_param(): WLAN_HT_CAP_SM_PS_STATIC
+hw_var_set_bssid   reg=618 
+RTL871X: concurrent_set_ap_chbw(wlan1) CH=6, BW=1, offset=1
+RTL871X: HW_VAR_BASIC_RATE: 0x150 -> 0x15d -> 0x15d
+RTL871X: ### Set STA_(1) info
+RTL871X: update_bmc_sta=> mac_id:1 , raid:5 , bitmap=0x150
+RTL871X: rtl8188e_Add_RateATid=> mac_id:1 , raid:5 , ra_bitmap=0x150, shortGIrate=0x00
+RTL871X: ### MacID(1),Set Max Tx RPT MID(2)
+RTL871X: ### rtl8188e_set_FwMediaStatus_cmd: MStatus=1 MACID=1 
+RTL871X: assoc success
+RTL871X: rtw_set_wps_assoc_resp, len=14
+RTL871X: rtw_set_wps_beacon, len=30
+RTL871X: rtw_set_wps_probe_resp, len=136
+RTL871X: rtw_set_beacon, len=158
+RTL871X: rtw_check_beacon_data, len=144
+RTL871X: [HT] Support STBC = 0x01
+RTL871X: update_hw_ht_param
+RTL871X: update_hw_ht_param(): WLAN_HT_CAP_SM_PS_STATIC
+hw_var_set_bssid   reg=618 
+RTL871X: concurrent_set_ap_chbw(wlan1) CH=6, BW=1, offset=1
+RTL871X: HW_VAR_BASIC_RATE: 0x150 -> 0x15d -> 0x15d
+RTL871X: ### Set STA_(1) info
+RTL871X: update_bmc_sta=> mac_id:1 , raid:5 , bitmap=0x150
+RTL871X: rtl8188e_Add_RateATid=> mac_id:1 , raid:5 , ra_bitmap=0x150, shortGIrate=0x00
+RTL871X: ### MacID(1),Set Max Tx RPT MID(2)
+RTL871X: ### rtl8188e_set_FwMediaStatus_cmd: MStatus=1 MACID=1 
+RTL871X: +871x_drv - drv_open, bup=1
+RTL871X: -871x_drv - drv_open, bup=1
+
+ --- playback_close ---
+set_channel_source addr : 0, src : 0
+ak39_set_hp_power 0,soft_de_pipa=1
+set_channel_source: src:0, s_dac:0, s_linein:0, s_mic:1.
+
+ === playback_close ===
+RTL871X: [rtw_wx_set_pmkid] IW_PMKSA_FLUSH!
+RTL871X: set_mode = IW_MODE_INFRA
+RTL871X: set bssid:00:00:00:00:00:00
+RTL871X: hw_var_set_opmode()-2458 mode = 2
+RTL871X: [rtw_wx_set_pmkid] IW_PMKSA_FLUSH!
+RTL871X: SetHwReg8188E:(HW_VAR_CHECK_TXBUF)TXBUF Empty(1) in 0 ms
+RTL871X: survey done event(c) band:0 for wlan0
+RTL871X: survey done, current CH=6, BW=1, offset=1
+RTL871X: restart pbuddy_adapter's beacon
+RTL871X: rtw_indicate_scan_done(wlan0)
+irq_handle_continous_mode 549: vb->i=2, but id -1
+RTL871X: IW_SCAN_THIS_ESSID, ssid=A Series of Tubes, len=17
+RTL871X: SetHwReg8188E:(HW_VAR_CHECK_TXBUF)TXBUF Empty(1) in 0 ms
+irq_handle_continous_mode 549: vb->i=0, but id -1
+irq_handle_continous_mode 549: vb->i=2, but id -1
+RTL871X: survey done event(a) band:0 for wlan0
+RTL871X: survey done, current CH=6, BW=1, offset=1
+RTL871X: restart pbuddy_adapter's beacon
+RTL871X: rtw_indicate_scan_done(wlan0)
+RTL871X: wpa_set_auth_algs, AUTH_ALG_OPEN_SYSTEM
+RTL871X: set_mode = IW_MODE_INFRA
+RTL871X: hw_var_set_opmode()-2458 mode = 2
+RTL871X: 
+ wpa_ie(length:22):
+RTL871X: 0x30 0x14 0x01 0x00 0x00 0x0f 0xac 0x04 
+RTL871X: 0x01 0x00 0x00 0x0f 0xac 0x04 0x01 0x00 
+RTL871X: 0x00 0x0f 0xac 0x02 0x00 0x00 0xc0 0xc1 
+RTL871X: SetHwReg8188ES, 3246, RCR= 7000208a 
+RTL871X: =>rtw_wx_set_essid
+RTL871X: ssid=A Series of Tubes, len=17
+RTL871X: set ssid [A Series of Tubes] fw_state=0x00000008
+RTL871X: Set SSID under fw_state=0x00000008
+RTL871X: [by_bssid:0][assoc_ssid:A Series of Tubes][to_roam:0] new candidate: A Series of Tubes(56:87:ac:f7:04:5b, ch1) rssi:-25
+RTL871X: rtw_select_and_join_from_scanned_queue: candidate: A Series of Tubes(56:87:ac:f7:04:5b, ch:1)
+RTL871X: [HT] Support STBC = 0x01
+RTL871X: declare supporting RX STBC
+RTL871X: link to new AP
+RTL871X: <=rtw_wx_set_essid, ret 0
+RTL871X: start_clnt_join: wlan0(ch=1, bw=0, ch_offset=0), wlan1 AP mode(ch=6, bw=1, ch_offset=1)
+RTL871X: start_clnt_join: connect_allow:1, chbw_allow:0
+RTL871X: rtw_sta_flush(wlan1)
+RTL871X: issue_deauth to ff:ff:ff:ff:ff:ff
+RTL871X: SetHwReg8188E:(HW_VAR_CHECK_TXBUF)TXBUF Empty(1) in 0 ms
+RTL871X: start_join_set_ch_bw: ch=1, bwmode=0, ch_offset=0
+hw_var_set_bssid   reg=708 
+RTL871X: set bssid:56:87:ac:f7:04:5b
+RTL871X: Set BSSID under fw_state=0x00000088
+RTL871X: link to new AP
+RTL871X: start auth
+RTL871X: issue_auth
+RTL871X: OnAuthClient
+RTL871X: auth success, start assoc
+RTL871X: network.SupportedRates[0]=82
+RTL871X: network.SupportedRates[1]=84
+RTL871X: network.SupportedRates[2]=8B
+RTL871X: network.SupportedRates[3]=96
+RTL871X: network.SupportedRates[4]=0C
+RTL871X: network.SupportedRates[5]=12
+RTL871X: network.SupportedRates[6]=18
+RTL871X: network.SupportedRates[7]=24
+RTL871X: network.SupportedRates[8]=30
+RTL871X: network.SupportedRates[9]=48
+RTL871X: network.SupportedRates[10]=60
+RTL871X: network.SupportedRates[11]=6C
+RTL871X: bssrate_len = 12
+RTL871X: OnAssocRsp
+RTL871X: report_join_res(2)
+RTL871X: rtw_joinbss_update_network
+RTL871X: +rtw_update_ht_cap()
+RTL871X: rtw_alloc_macid = 0
+RTL871X: rtw_joinbss_update_stainfo
+RTL871X: ### Set STA_(0) info
+RTL871X: assoc success
+RTL871X: HW_VAR_BASIC_RATE: 0x15f -> 0x15f -> 0x15f
+RTL871X: WMM(0): 0, a42b
+RTL871X: WMM(1): 0, a44f
+RTL871X: WMM(2): 0, 5e4322
+RTL871X: WMM(3): 0, 2f3222
+RTL871X: wmm_para_seq(0): 0
+RTL871X: wmm_para_seq(1): 1
+RTL871X: wmm_para_seq(2): 2
+RTL871X: wmm_para_seq(3): 3
+RTL871X: HTOnAssocRsp
+RTL871X: UpdateHalRAMask8188E => mac_id:0, networkType:0x0b, mask:0x000fffff
+         ==> rssi_level:0, rate_bitmap:0x000ff005
+RTL871X: ### MacID(1),Set Max Tx RPT MID(2)
+RTL871X: ### rtl8188e_set_FwMediaStatus_cmd: MStatus=1 MACID=0 
+RTL871X: send eapol packet
+RTL871X: after join,primary adapter, CH=1, BW=0, offset=0
+RTL871X: after join, second adapter, CH=1, BW=1, offset=1
+RTL871X: update pbuddy_adapter's beacon
+RTL871X: ### Set STA_(1) info
+RTL871X: update_bmc_sta=> mac_id:1 , raid:5 , bitmap=0x150
+RTL871X: rtl8188e_Add_RateATid=> mac_id:1 , raid:5 , ra_bitmap=0x150, shortGIrate=0x00
+RTL871X: ### MacID(1),Set Max Tx RPT MID(2)
+RTL871X: ### rtl8188e_set_FwMediaStatus_cmd: MStatus=1 MACID=1 
+RTL871X: =>mlmeext_joinbss_event_callback
+RTL871X: send eapol packet
+RTL871X: send eapol packet
+RTL871X:  ~~~~set sta key:unicastkey
+RTL871X: set pairwise key camid:4, addr:56:87:ac:f7:04:5b, kid:0, type:AES
+RTL871X:  ~~~~set sta key:groupkey
+RTL871X: ==> rtw_set_key algorithm(4),keyid(1),key_mask(0)
+RTL871X: set group key camid:5, addr:56:87:ac:f7:04:5b, kid:1, type:AES
+RTL871X: SetHwReg8188ES, 3242, RCR= 7000208e 
+RTL871X: UpdateHalRAMask8188E => mac_id:0, networkType:0x0b, mask:0x000fffff
+         ==> rssi_level:1, rate_bitmap:0x000f0000
+RTL871X: OnAction_back
+RTL871X: OnAction_back, action=0
+RTL871X: issue_action_BA, category=3, action=1, status=0
+RTL871X: OnAction_back
+RTL871X: OnAction_back, action=0
+RTL871X: issue_action_BA, category=3, action=1, status=0
+RTL871X: HW_VAR_BASIC_RATE: 0x15f -> 0x15f -> 0x15f
+RTL871X: rtw_hostapd_sta_flush
+RTL871X: rtw_sta_flush(wlan1)
+RTL871X: issue_deauth to ff:ff:ff:ff:ff:ff
+RTL871X: rtw_set_wps_assoc_resp, len=14
+RTL871X: rtw_set_wps_beacon, len=14
+RTL871X: rtw_set_wps_probe_resp, len=14
+RTL871X: set_mode = IW_MODE_INFRA
+RTL871X: stop_ap_mode, free acl_node_queue, num=0
+RTL871X: rtw_sta_flush(wlan1)
+RTL871X: issue_deauth to ff:ff:ff:ff:ff:ff
+RTL871X: ### Clean STA_(1) info
+RTL871X: ### Clean STA_(1) info
+hw_var_set_bssid   reg=618 
+RTL871X: hw_var_set_opmode()-2572 mode = 2
+RTL871X: rtw_port_switch_chk wlan0 is SINGLE_LINK
+RTL871X: port switch - port0(wlan0), port1(wlan1)
+RTL871X: rtl8188e_set_FwJoinBssReport_cmd mstatus(1)
+RTL871X: SetFwRsvdPagePkt(wlan0)
+RsvdPageNum: 8
+RTL871X: rtw_get_sec_iv(): StaAddr: 56 87 ac f7 04 5b
+RTL871X: rtw_get_sec_iv(): CurrentIV: 54 00 00 20 00 00 00 00 
+RTL871X: SetFwRsvdPagePkt: Set RSVD page location to Fw ,TotalPacketLen(776)
+RTL871X: wlan0: 1 DL RSVD page success! DLBcnCount:1, poll:1
+RTL871X: Set RSVD page location to Fw.
+irq_handle_continous_mode 549: vb->i=1, but id -1
+irq_handle_continous_mode 549: vb->i=1, but id -1
+irq_handle_continous_mode 549: vb->i=0, but id -1
