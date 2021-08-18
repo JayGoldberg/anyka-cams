@@ -8,17 +8,13 @@ There are 3 models of the OUCAM so far, P1 P2 and an outdoor model that's no lon
 | P2      | <img src="oucam_p2_thumb1.png" width="300px">      | <img src="oucam_p2_inside1.jpg" width="300px"> |
 | Outdoor | <img src="oucam_outdoor_thumb1.png" width="300px"> | None                                           |
 
-These cameras seem similar the "v380" or "A9" cameras available everywhere for US$20.
-
-![a9 mini camera](a9_thumb1.png)
-![v380 PTZ camera](v380_thumb1.png)
-![v380 stationary camera](v380_thumb2.png)
-
 ### Platform
 
 Detailed at [anyka's website](http://www.anyka.com/en/productInfo.aspx?id=109), and in the [specs](http://monitor.espec.ws/files/700cafec77419c2d7705f376c974b8d0ff72_986.pdf).
 
 See also https://github.com/HoffmannP/Camera and https://gist.github.com/maxious/c8915a436b532ab09e61bf937295a5d2.
+
+Do **not** use the `poweroff` command on these cameras, it seems to brick them!
 
 #### Features
 
