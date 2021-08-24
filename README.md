@@ -14,7 +14,7 @@ Detailed at [anyka's website](http://www.anyka.com/en/productInfo.aspx?id=109), 
 
 See also https://github.com/HoffmannP/Camera and https://gist.github.com/maxious/c8915a436b532ab09e61bf937295a5d2.
 
-Do **not** use the `poweroff` command on these cameras, it seems to brick them!
+Do **not** use the `poweroff` command on these cameras, as they do not have power management capabilities to switch off this way, so they go into halt and you need to wait until their battery dies to use them again.
 
 #### Features
 
