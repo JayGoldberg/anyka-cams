@@ -14,8 +14,6 @@ Detailed at [anyka's website](http://www.anyka.com/en/productInfo.aspx?id=109), 
 
 See also https://github.com/HoffmannP/Camera and https://gist.github.com/maxious/c8915a436b532ab09e61bf937295a5d2.
 
-Do **not** use the `poweroff` command on these cameras, as they do not have power management capabilities to switch off this way, so they go into halt and you need to wait until their battery dies to use them again.
-
 #### Features
 
 CPU
@@ -234,18 +232,27 @@ The tunable params are the "ratio" of changed pixels, and the number of sections
 
 ### Change root password
 
-mkpasswd -S yu6zTMnb --method=md5
+`mkpasswd -S yu6zTMnb --method=md5` where `yu6zTMnb` is the salt.
   
-1. ftp get ftp://:@[ip address]/etc/jffs/shadow
-1. replace hash in shadow
-1. ftp put shadow ftp://:@[ip address]/etc/jffs/shadow
+1. ftp get ftp://:@[ip address]/etc/jffs2/shadow
+1. replace hash in shadow for the root user
+1. `ftp put shadow` ftp://:@[ip address]/etc/jffs2/shadow
 
-Changes are immediate.
+Changes are immediate, login with telnet.
 
 ### Wifi
 At startup, reads `/etc/jffs2/anyka_cfg.ini` for wifi config.
 
-How does hotspot get value of TUTK id? Unknown. The only place it's stored on the device is `/etc/jffs/tutk.conf`.
+```
+[wireless]
+ssid                    = Your WiFi SSID
+mode                    = Infra
+security                        = wpa
+password                        = Your WiFi password
+running                 = softap
+```
+
+How does hotspot get value of TUTK id? Unknown. The only place it's stored on the device is `/etc/jffs/tutk.conf`? Maybe in `/proc` or `/sys`
 
 Wifi performance is about 900Kbps sustained.
 
@@ -643,3 +650,8 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ## Manufacturer support
 
 There are several email addresses written on the paper instructions included with the cameras: oucam888@gmail.com, fecomisupport@163.com
+
+
+## Notes
+
+Do **not** use the `poweroff` command on these cameras, as they do not have power management capabilities to switch off this way, so they go into halt and you need to wait until their battery dies to use them again.
